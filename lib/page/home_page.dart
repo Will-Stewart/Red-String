@@ -7,6 +7,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+          )),
           title: Text(
             'Home Page',
             style: GoogleFonts.nunito(
@@ -19,30 +23,33 @@ class HomePage extends StatelessWidget {
           elevation: 0,
           centerTitle: true,
         ),
-        body: ListView(
-          padding: const EdgeInsets.all(16),
-          children: <Widget>[
-            Container(
-                height: 150.0,
-                width: 300.0,
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color(0xFFF5896E),
-                        Color(0xFFFFB19D),
-                      ],
-                    )),
-                child: const Center(
-                  child: Text(
-                    "Widget",
-                    style: TextStyle(color: Colors.white, fontSize: 22),
-                    textAlign: TextAlign.center,
-                  ),
-                )),
-          ],
-        ),
+        body: ListView(padding: const EdgeInsets.all(16), children: <Widget>[
+          clockWidget(),
+          ]),
       );
+}
+
+// Widgets
+
+Widget clockWidget() {
+  return Container(
+      height: 150.0,
+      width: 300.0,
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFFF5896E),
+              Color(0xFFFFB19D),
+            ],
+          )),
+      child: const Center(
+        child: Text(
+          "Widget",
+          style: TextStyle(color: Colors.white, fontSize: 22),
+          textAlign: TextAlign.center,
+        ),
+      ));
 }
