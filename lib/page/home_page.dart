@@ -26,6 +26,9 @@ class HomePage extends StatelessWidget {
         body: ListView(children: <Widget>[
           clockWidget,
           photoWidget,
+          quoteWidget,
+          weatherWidget,
+          gameWidget,
         ]),
       );
 }
@@ -58,7 +61,7 @@ Widget clockWidget = Column(
           )),
       child: const Center(
         child: Text(
-          "Widget",
+          "Clocks Here",
           style: TextStyle(color: Colors.white, fontSize: 22),
           textAlign: TextAlign.center,
         ),
@@ -87,6 +90,111 @@ Widget photoWidget = Column(
               image: NetworkImage(
                   "https://images.squarespace-cdn.com/content/v1/5b870bf189c172f47135c2bc/1582416653056-31KDBZXLO6UR8FY3NFQ6/llc-s-corporation-washington"),
               fit: BoxFit.cover)),
+    )
+  ],
+);
+
+Widget weatherWidget = Column(
+  children: [
+    Text(
+      'Weather',
+      style: GoogleFonts.nunito(
+          fontWeight: FontWeight.bold,
+          textStyle: const TextStyle(
+            color: Color(0xFF493843),
+            fontSize: 24,
+          )),
+    ),
+    Container(
+      height: 150.0,
+      width: 355.0,
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFF38493E),
+              Color(0xFF5f6d64),
+            ],
+          )),
+      child: const Center(
+        child: Text(
+          "Current Weather In:",
+          style: TextStyle(color: Colors.white, fontSize: 22),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    )
+  ],
+);
+
+Widget quoteWidget = Column(
+  children: [
+    Text(
+      'Daily Quote',
+      style: GoogleFonts.nunito(
+          fontWeight: FontWeight.bold,
+          textStyle: const TextStyle(
+            color: Color(0xFF493843),
+            fontSize: 24,
+          )),
+    ),
+    Container(
+      height: 150.0,
+      width: 355.0,
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFF493843),
+              Color(0xFF2b2128),
+            ],
+          )),
+      child: const Center(
+        child: Text(
+          " 'Quote from partner here' ",
+          style: TextStyle(color: Colors.white, fontSize: 22),
+          textAlign: TextAlign.left,
+        ),
+      ),
+    )
+  ],
+);
+
+Widget gameWidget = Column(
+  children: [
+    Text(
+      'Games',
+      style: GoogleFonts.nunito(
+          fontWeight: FontWeight.bold,
+          textStyle: const TextStyle(
+            color: Color(0xFF493843),
+            fontSize: 24,
+          )),
+    ),
+    Container(
+      height: 150.0,
+      width: 355.0,
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFFF5896E),
+              Color(0xFFFFB19D),
+            ],
+          )),
+      child: const Center(
+        child: Text(
+          "Widget",
+          style: TextStyle(color: Colors.white, fontSize: 22),
+          textAlign: TextAlign.center,
+        ),
+      ),
     )
   ],
 );
