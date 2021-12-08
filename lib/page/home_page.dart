@@ -23,18 +23,29 @@ class HomePage extends StatelessWidget {
           elevation: 0,
           centerTitle: true,
         ),
-        body: ListView(padding: const EdgeInsets.all(16), children: <Widget>[
-          clockWidget(),
-          ]),
+        body: ListView(children: <Widget>[
+          clockWidget,
+          photoWidget,
+        ]),
       );
 }
 
 // Widgets
 
-Widget clockWidget() {
-  return Container(
+Widget clockWidget = Column(
+  children: [
+    Text(
+      'Clock',
+      style: GoogleFonts.nunito(
+          fontWeight: FontWeight.bold,
+          textStyle: const TextStyle(
+            color: Color(0xFF493843),
+            fontSize: 24,
+          )),
+    ),
+    Container(
       height: 150.0,
-      width: 300.0,
+      width: 355.0,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
           gradient: LinearGradient(
@@ -51,5 +62,42 @@ Widget clockWidget() {
           style: TextStyle(color: Colors.white, fontSize: 22),
           textAlign: TextAlign.center,
         ),
-      ));
-}
+      ),
+    )
+  ],
+);
+
+Widget photoWidget = Column(
+  children: [
+    Text(
+      'Our Photos',
+      style: GoogleFonts.nunito(
+          fontWeight: FontWeight.bold,
+          textStyle: const TextStyle(
+            color: Color(0xFF493843),
+            fontSize: 24,
+          )),
+    ),
+    Container(
+      height: 150.0,
+      width: 355.0,
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFFF5896E),
+              Color(0xFFFFB19D),
+            ],
+          )),
+      child: const Center(
+        child: Text(
+          "Widget",
+          style: TextStyle(color: Colors.white, fontSize: 22),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    )
+  ],
+);
